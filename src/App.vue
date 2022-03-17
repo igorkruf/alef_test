@@ -1,30 +1,86 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <header class="header">
+    <nav class="nav nav-header">
+      <router-link :to="{ name: 'Form' }" class="nav__routerlink"
+        >Форма</router-link
+      >
+      <router-link :to="{ name: 'Preview' }" class="nav__routerlink"
+        >Превью</router-link
+      >
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section-content">
+      <router-view></router-view>
+    </section>
+  </main>
+  <footer class="footer row justify-center">
+    <div>all right reserved</div>
+  </footer>
 </template>
 
+<script>
+export default {
+  name: "LayoutDefault",
+  data() {
+    return {};
+  },
+  methods: {},
+  components: {},
+};
+</script>
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vh;
+  display: grid;
+  font-family: "OpenSans-Regular";
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 100px;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.header {
+  display: grid;
+  border-bottom: 1px solid $gray_color;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+}
+.nav-header {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  grid-column-gap: 30px;
+}
+.nav__routerlink {
+  text-decoration: none;
+  color: $gray_color;
+  font-size: 16px;
+  &:hover {
+    color: $accent_color;
   }
+}
+// .nav__routerlink-active {
+//   color: $accent_color;
+// }
+.router-link-active {
+  color: $accent_color;
+  cursor: default;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.section-content {
+  width: 100vw;
+  max-width: 800px;
+}
+.form {
+  padding: 20px;
+}
+.persdan__title {
+  font-size: 18px;
+  margin: 20px 0px;
 }
 </style>

@@ -1,0 +1,28 @@
+$accent_color: #000;
+$gray_color: #9b9b9b;
+$gray_color_light: #e7e7e7;
+$gray_color_lighter: #ebebeb;
+$gutter: 30px;
+$wsi: 25px;
+$hsi: 25px;
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("~@/assets/fonts/OpenSans-Bold.woff");
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("~@/assets/fonts/OpenSans-Regular.woff");
+}
+.grid {
+  display: grid;
+}
+.content {
+  width: 100%;
+  max-width: 1200px;
+}
+@mixin br($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  -ms-border-radius: $rad;
+  border-radius: $rad;
+}
